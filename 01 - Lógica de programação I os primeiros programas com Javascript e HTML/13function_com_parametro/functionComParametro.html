@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função com Parametro</title>
+</head>
+
+<body>
+    <script>
+        function pulaLinha() {
+            document.write("<br>");
+        }
+
+        function exibeTitulo(titulo) {
+            document.write("<h1>" + titulo + "</h1>");   
+        }
+
+        function escreva(mensagem) {
+            document.write(mensagem);
+            pulaLinha();
+        }
+
+        function exibeParagrafo(paragrafo) {
+            document.write("<p>" + paragrafo + "</p>");   
+        }
+
+        var titulo = "Bem-vindo ao meu programa!";
+
+        exibeTitulo(titulo);        
+
+        escreva("Vocês não sabem o que tive que aprender para fazer isso!");
+
+        pulaLinha();
+
+        escreva("Contudo, assistindo os vídeos e estudando ...");
+
+        pulaLinha();
+
+        escreva("Eu vou mais longe!");
+
+        pulaLinha();
+
+        // pede para alguém ler daqui em diante e veja se ele entende o que esta sendo feito
+        exibeTitulo("Bien-venidos");
+        exibeParagrafo("Este é um simples paragrafo");
+        exibeParagrafo("Este é um simples paragrafo");
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A idade do meu irmão</title>
+</head>
+<body>
+    <script>
+        function mensagemFinal(diferencaIdades){
+            document.write("A diferença de idade entre meu irmão e eu é de " + diferencaIdades + " anos.");
+        }
+
+        function verificaIdades(minhaIdade,irmaoIdade){
+            if (minhaIdade > irmaoIdade){
+                diferencaIdades = minhaIdade - irmaoIdade
+                mensagemFinal(diferencaIdades);
+            } else if(minhaIdade < irmaoIdade){
+                diferencaIdades = irmaoIdade - minhaIdade
+                mensagemFinal(diferencaIdades);
+            }else{
+                document.write("Meu irmão e eu temos a mesma idade.")
+            }
+        }
+
+        var minhaIdade = 30;
+        var irmaoIdade = 30;
+        var diferencaIdades;
+        verificaIdades(minhaIdade,irmaoIdade)
+
+    </script>
+    
+</body>
+</html>
