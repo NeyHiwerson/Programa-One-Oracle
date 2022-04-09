@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <title>Ordenando Vetor com Bubblesort</title>
+</head>
+<body>
+
+    <script>
+
+        function organizaVetor(vetor){
+            for (let i = 0; i < vetor.length; i++) {
+                for (let j = 0; j < vetor.length - 1; j++) {
+                    if (vetor[j] > vetor[j + 1] ) {
+                        var aux = vetor[j];
+                        vetor[j] = vetor[j + 1];
+                        vetor[j + 1] = aux;                   }                
+                }   
+            }
+        }      
+
+        document.write("<br><h1><hr>Ordenando Vetor com Bubblesort</hr></h1>");
+        var vet = [3, 7, 2, 5, 9, 1, 7];
+        console.log(vet);
+        document.write("Tenho um vetor: " + vet);
+        document.write("<br>vou dar uma organizada uzando Bubblesort");
+        organizaVetor(vet);
+        document.write("<br>Agora meu vetor ficou assim: " + vet);
+        </script>
+    
+</body>
+</html>
