@@ -24,20 +24,25 @@
 
         function calculaIMC(peso, altura){  
 
-            var imc = peso / (altura * altura);
-            mostra("<br>O IMC calculado foi: " + Math.round(imc));
-            mostra("<hr>")
+            let imc = peso / (altura * altura);            
+            return imc;
         }
 
         function definaPessoa(nome, pesoPessoa, alturaPessoa){
 
             mostra("<br>" + nome + " tem peso de " + pesoPessoa + " e altura de " + alturaPessoa);
-            calculaIMC(pesoPessoa, alturaPessoa);
+            var imc = calculaIMC(pesoPessoa, alturaPessoa);
+            mostra("<br>O IMC calculado foi: " + Math.round(imc));
+            mostra("<hr>")
         }
         
         definaPessoa("Ney", 100, 1.73);
         definaPessoa("Paulo", 80, 1.85);
         definaPessoa("João", 115, 1.72);
+        definaPessoa("Pedro", 75, 1.82);
+        definaPessoa("Juca", 130, 1.85);
+        definaPessoa("Jorge", 120, 1.92);
+
 
     </script>
 
