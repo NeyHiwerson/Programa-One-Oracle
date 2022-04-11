@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anos de Copa</title>
+</head>
+
+<body>
+    <script>
+        function pulaLinha() {
+            document.write("<br>")
+        }
+
+        function mostra(mensagem) {
+            document.write(mensagem);
+            pulaLinha()
+        }
+
+        mostra("<h2> A Primeira Copa do Mundo foi em 1930 </h2>")
+        mostra("<h3> A lista completa dos anos de Copa:</h3>")
+        var anoAtual = 2022;
+        var anoDeCopa = 1930;
+        while(anoDeCopa <= anoAtual){
+            mostra("tivemos copa em " + anoDeCopa);
+            anoDeCopa = anoDeCopa + 4;
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>

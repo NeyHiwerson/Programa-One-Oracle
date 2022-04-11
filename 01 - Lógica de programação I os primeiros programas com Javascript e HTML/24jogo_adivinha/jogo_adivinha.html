@@ -17,6 +17,7 @@
 
         function mostra(mensagem) {
             document.write(mensagem);
+            pulaLinha();
         }
 
         function sorteia(n) {
@@ -27,23 +28,21 @@
         }
 
         var n = parseInt(prompt("insira um numero de 1 a 100: "))
-        console.log(n)
-
         var numero = sorteia(n);
-        console.log(numero)
         var chute;
-
         chute = parseInt(prompt("insira um numero de 0 a " + n + " para adivinhar o numero Sortiado"))
+        mostra(n)
+        mostra(numero)
+        mostra(chute)
         if (chute == numero) {
             mostra("Você acertou!!! O numero Pensado foi " + chute)
-            
-        } else if(chute > numero){
+        }else if (numero > chute) {
             mostra("ERRRROOOOUUU!!! O numero Pensado foi maior que " + chute)
-        }else {
+        }else if (numero < chute) {
             mostra("ERRRROOOOUUU!!! O numero Pensado foi menor que " + chute)
         }
 
-        mostra("<br>FIM DO JOGO")
+            mostra("<br>FIM DO JOGO")
 
     </script>
 
