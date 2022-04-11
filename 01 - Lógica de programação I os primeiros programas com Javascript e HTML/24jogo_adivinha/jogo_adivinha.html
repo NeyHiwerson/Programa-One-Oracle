@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Adivinha</title>
+</head>
+
+<body>
+
+    <script>
+        function pulaLinha() {
+            document.write("<br>")
+        }
+
+        function mostra(mensagem) {
+            document.write(mensagem);
+        }
+
+        function sorteia(n) {
+            var sorteado = Math.round(Math.random() * n)
+            console.log(sorteado)
+
+            return sorteado;
+        }
+
+        var n = parseInt(prompt("insira um numero de 1 a 100: "))
+        console.log(n)
+
+        var numero = sorteia(n);
+        console.log(numero)
+        var chute;
+
+        chute = parseInt(prompt("insira um numero de 0 a " + n + " para adivinhar o numero Sortiado"))
+        if (chute == numero) {
+            mostra("Você acertou!!! O numero Pensado foi " + chute)
+            
+        } else if(chute > numero){
+            mostra("ERRRROOOOUUU!!! O numero Pensado foi maior que " + chute)
+        }else {
+            mostra("ERRRROOOOUUU!!! O numero Pensado foi menor que " + chute)
+        }
+
+        mostra("<br>FIM DO JOGO")
+
+    </script>
+
+</body>
+
+</html>
