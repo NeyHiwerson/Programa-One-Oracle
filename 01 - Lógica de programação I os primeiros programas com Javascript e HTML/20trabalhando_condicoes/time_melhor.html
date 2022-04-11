@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compara Temporada</title>
+</head>
+
+<body>
+    <script>
+
+        function pulaLinha() {
+            document.write("<br>")
+        }
+
+        function mostra(mensagem) {
+            document.write("<h2>" + mensagem + "</h2>");
+        }
+
+        alert("Vamos calcular quantos pontos tem o seu time e como ele esta referente a temporada passada:");
+
+        var vitorias = prompt("Insira o numero de vitorias do seu time: ");
+        var empates = prompt("Insira o numero de empates do seu time: ");
+        var v = parseInt(vitorias);
+        var e = parseInt(empates);
+        var totalPontos = v * 3 + e;
+        mostra("o total de pontos do seu time é " + totalPontos);
+        var totalTemporadaPassada = 28;
+
+        if (totalPontos > totalTemporadaPassada) {
+            mostra("Seu time está melhor do que no ano passado.");
+        }
+
+        if (totalPontos < totalTemporadaPassada) {
+            mostra("Seu time está pior do que no ano passado.");
+        }
+
+        if (totalPontos == totalTemporadaPassada) {
+            mostra("Seu time está igual ao ano passado.");
+        }
+
+        mostra("FIM");
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
