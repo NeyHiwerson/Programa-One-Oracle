@@ -14,6 +14,7 @@
     <script>
         var segredo = Math.round(Math.random() * 10)
         var chute = document.querySelector("input")
+        chute.focus();//para que o 1° foco seja nossa entrada de dados
         function compara(){
             if (chute.value == segredo) {
                 alert("Parabéns, vc acertou o numero pensado foi " + segredo);
@@ -22,6 +23,10 @@
             }else{
                 alert("Errou! o numero pensado é menor que " + chute.value)
             }
+
+            chute.value = "";//para limpar nosso campo de entrada
+            chute.focus();//para sempre retornar o foco para nossa entrada de dados
+
         }
 
         var button = document.querySelector("button");
