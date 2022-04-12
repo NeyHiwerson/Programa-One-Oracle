@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinha mais</title>
+</head>
+<body>
+    <h3>Pensei em um numero de 0 a 10, pode adivinhar?</h3>
+    <input>
+    <button>clique aqui para comparar</button>
+
+    <script>
+        var segredo = Math.round(Math.random() * 10)
+        var chute = document.querySelector("input")
+        function compara(){
+            if (chute.value == segredo) {
+                alert("Parabéns, vc acertou o numero pensado foi " + segredo);
+            } else if (chute.value < segredo){
+                alert("Errou! o numero pensado é maior que " + chute.value);
+            }else{
+                alert("Errou! o numero pensado é menor que " + chute.value)
+            }
+        }
+
+        var button = document.querySelector("button");
+        button.onclick = compara;
+
+
+    </script>
+    
+</body>
+</html>
