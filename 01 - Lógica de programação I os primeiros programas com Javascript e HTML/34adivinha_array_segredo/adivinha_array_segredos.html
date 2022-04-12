@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>Pensei em 3 numeros de 0 a 10, pode adivinhar algum?</h3>
+    <input>
+    <button>clique aqui para comparar</button>
+
+    <script>
+        
+        var segredos = [ 3, 5, 8];
+        var chute = document.querySelector("input")
+        chute.focus();//para que o 1° foco seja nossa entrada de dados
+        var acertou = false
+        function compara(){
+
+            for (let index = 0; index < segredos.length; index++) {
+                let element = segredos[index];
+                if (element == chute.value) {
+                alert("Parabéns, vc acertou um dos numeros pensados foi " + chute.value); 
+                acertou = true;                   
+                } 
+            }
+            if (acertou == false) {
+                
+                alert("Errou! Nenhum dos numeros pensados foi " + chute.value);   
+            }
+
+            chute.value = "";//para limpar nosso campo de entrada
+            chute.focus();//para sempre retornar o foco para nossa entrada de dados
+            acertou = false;
+        }
+
+        var button = document.querySelector("button");
+        button.onclick = compara;
+
+
+    </script>
+
+</body>
+</html>
