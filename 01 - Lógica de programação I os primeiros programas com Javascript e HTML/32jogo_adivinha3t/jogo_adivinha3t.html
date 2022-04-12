@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Adivinha com 3 tentativas</title>
+</head>
+
+<body>
+
+    <script>
+        function pulaLinha() {
+            document.write("<br>")
+        }
+
+        function mostra(mensagem) {
+            document.write(mensagem);
+            pulaLinha();
+        }
+
+        function sorteia(n) {
+            var sorteado = Math.round(Math.random() * n)
+            console.log(sorteado)
+
+            return sorteado;
+        }
+
+        var n = parseInt(prompt("insira um numero de 1 a 100: "))
+        var numero = sorteia(n);
+        var chute;
+        var tentativas = 1;
+
+        while (tentativas <= 3) {
+
+            chute = parseInt(prompt("insira um numero de 0 a " + n + " para adivinhar o numero Sortiado, <br> tentativa " + tentativas));
+
+            if (chute == numero) {
+                alert("Você acertou!!! O numero Pensado foi " + chute)
+                break;
+            } else if (numero > chute) {
+                alert("ERRRROOOOUUU!!! O numero Pensado foi maior que " + chute)
+            } else if (numero < chute) {
+                alert("ERRRROOOOUUU!!! O numero Pensado foi menor que " + chute)
+            }
+            tentativas++;
+        }        
+        mostra("O numero pensado foi " + numero )
+        mostra("<br>FIM DO JOGO")
+
+    </script>
+
+</body>
+
+</html>
