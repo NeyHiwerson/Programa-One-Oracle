@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Randomico</title>
+</head>
+
+<body>
+    
+    
+    <input>
+    <button>clique aqui para comparar</button>
+    
+    <script>
+        function geraAleatorio() {
+            let aleatorio = Math.round(Math.random() * rangeNumeros);
+            return aleatorio;
+        }
+        
+        function geraArray(segredos) {
+            for (let index = 0; index < quantSegredos; index++) {
+                var aux = true;
+                while (aux) {
+
+                    numeroGerado = geraAleatorio()
+                    if (numeroGerado != 0) {//12345678910
+                        var grava = true;
+                        for (let index = 0; index < segredos.length; index++) {
+                            if (numeroGerado == segredos[index]) {
+                                grava = false   
+                            }
+                            
+                        }
+                        if (grava == true) {
+                            segredos.push(numeroGerado);                            
+                        }
+                        aux = false;
+                    }
+                }
+                
+                
+            }
+        }
+        
+        var quantSegredos = 3;
+        var rangeNumeros = 10;
+        
+        document.write("<h3>Pensei em " + quantSegredos + " numeros de 1 a " + rangeNumeros + ", pode adivinhar algum?</h3>");
+        
+        var segredos = [];
+        geraArray(segredos);
+        console.log(segredos);
+        
+        var chute = document.querySelector("input")
+        chute.focus();//para que o 1° foco seja nossa entrada de dados
+        var acertou = false
+        function compara() {
+            
+            for (let index = 0; index < segredos.length; index++) {
+                let element = segredos[index];
+                if (element == chute.value) {
+                    alert("Parabéns, vc acertou um dos numeros pensados foi " + chute.value);
+                    acertou = true;
+                }
+            }
+            if (acertou == false) {
+
+                alert("Errou! Nenhum dos numeros pensados foi " + chute.value);
+            }
+
+            chute.value = "";//para limpar nosso campo de entrada
+            chute.focus();//para sempre retornar o foco para nossa entrada de dados
+            acertou = false;
+        }
+
+        var button = document.querySelector("button");
+        button.onclick = compara;
+
+
+    </script>
+
+</body>
+
+</html>
