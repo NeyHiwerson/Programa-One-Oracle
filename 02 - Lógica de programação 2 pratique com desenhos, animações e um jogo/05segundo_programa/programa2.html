@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa02</title>
+</head>
+
+<body>
+
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        function desenhaQuadradoVerde(pxi, pyi, txo, tyo) {
+            var pxi = pxi;
+            var pyi = pyi;
+            var txo = txo;
+            var tyo = tyo;
+            var tela = document.querySelector('canvas');
+            var pincel = tela.getContext('2d');
+
+            pincel.fillStyle = 'green';
+            pincel.fillRect(pxi, pyi, txo, tyo);
+            pincel.strokeStyle = 'black';
+            pincel.strokeRect(pxi, pyi, txo, tyo);
+
+        }
+
+        desenhaQuadradoVerde(0, 0, 50, 50);
+        desenhaQuadradoVerde(50, 0, 50, 50);
+        desenhaQuadradoVerde(100, 0, 50, 50);
+
+
+
+    </script>
+</body>
+
+</html>
