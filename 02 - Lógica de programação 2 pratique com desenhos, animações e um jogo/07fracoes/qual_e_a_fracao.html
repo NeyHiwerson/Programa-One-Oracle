@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body> 
+    <h1>Qual é a fração??</h1>  
+
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        function desenhaFracao(x, y, tamanho, cor) {
+            var x = x;//numerador
+            var y = y;//denominador
+            var tamanho = tamanho;
+            var cor = cor;
+            var tela = document.querySelector('canvas');
+            var pincel = tela.getContext('2d');
+
+            var xi = 0;
+            var yi = 50;
+            var xf = tamanho;
+            var yf = tamanho;
+            for (let index = 0; index < x; index++) {
+                pincel.fillStyle = cor;
+                pincel.fillRect(xi, yi, xf, yf)
+                xi = xi + 50  
+            }
+            
+            xi = 0;
+            for (let index = 0; index < y; index++) {
+                pincel.fillStyle = 'black';                
+                pincel.strokeRect(xi, yi, xf, yf)
+                xi = xi + 50    
+            }
+            
+
+        }       
+
+        //dentro da função desenhaFracao() definimos:
+        // o primeiro valor para numerados,
+        // o segundo valor para denominador,
+        // terceiro valor para tamanho do desenhaQuadrado,
+        // o quarto valor é a cor entre aspas simples
+        desenhaFracao(5, 8, 50,'green')
+
+
+    </script>
+</body>
+
+</html>

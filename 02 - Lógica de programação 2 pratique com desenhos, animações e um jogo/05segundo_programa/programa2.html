@@ -22,25 +22,25 @@
             var borda = borda;
             var tela = document.querySelector('canvas');
             var pincel = tela.getContext('2d');
-            
+
             for (let index = 0; index < 3; index++) {
-                
+
                 pincel.fillStyle = cor;
-            pincel.fillRect(pxi, pyi, txo, tyo);
-            pincel.strokeStyle = borda;
-            pincel.strokeRect(pxi, pyi, txo, tyo);
+                pincel.fillRect(pxi, pyi, txo, tyo);
+                pincel.strokeStyle = borda;
+                pincel.strokeRect(pxi, pyi, txo, tyo);
                 pyi = pyi + 50
             }
-            
+
 
         }
 
-        desenhaQuadrado(0, 0, 50, 50, 'green', 'red');        
+        desenhaQuadrado(0, 0, 50, 50, 'green', 'red');
 
-        desenhaQuadrado(50, 0, 50, 50, 'blue', 'yellow');        
+        desenhaQuadrado(50, 0, 50, 50, 'blue', 'yellow');
 
         desenhaQuadrado(100, 0, 50, 50, 'yellow', 'black');
-        
+
 
 
     </script>
