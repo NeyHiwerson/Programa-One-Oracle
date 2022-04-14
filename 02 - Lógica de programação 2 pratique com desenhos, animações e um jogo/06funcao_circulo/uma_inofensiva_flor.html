@@ -1,30 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uma inofensiva flor</title>
 </head>
+
 <body>
 
     <canvas width="600" height="400"></canvas>
-    
+
     <script>
 
         var tela = document.querySelector('canvas');
         var pincel = tela.getContext('2d');
         pincel.fillStyle = 'lightgray';
         pincel.fillRect(0, 0, 600, 400);
-    
+
         function desenhaCirculo(x, y, raio, cor) {
-    
+
             pincel.fillStyle = cor;
             pincel.beginPath();
-            pincel.arc(x, y, raio, 0, 2*3.14);
+            pincel.arc(x, y, raio, 0, 2 * 3.14);
             pincel.fill();
         }
 
+        function desenhaFlor(x, y, centralCor, folha1, folha2) {
+            var x = x;
+            var y = y;
+            var centralCor = centralCor;
+            var folha1 = folha1;
+            var folha2 = folha2;
+
+            //caule
+            pincel.fillStyle = 'green';
+            pincel.fillRect(x - 2, y + 29, 4, 400 - (y + 29));
+
+            //center        x    y
+            desenhaCirculo(x, y, 30, centralCor)
+            //top 0 1 2  
+            desenhaCirculo(x, y - 40, 10, folha1)
+            desenhaCirculo(x + 20, y - 35, 10, folha2)
+            desenhaCirculo(x + 35, y - 20, 10, folha1)
+            //right 3 4 5
+            desenhaCirculo(x + 40, y, 10, folha2)
+            desenhaCirculo(x + 35, y + 20, 10, folha1)
+            desenhaCirculo(x + 20, y + 35, 10, folha2)
+            //botton 6 7 8
+            desenhaCirculo(x, y + 40, 10, folha1)
+            desenhaCirculo(x - 20, y + 35, 10, folha2)
+            desenhaCirculo(x - 35, y + 20, 10, folha1)
+            //left 9 10 11
+            desenhaCirculo(x - 40, y, 10, folha2)
+            desenhaCirculo(x - 35, y - 20, 10, folha1)
+            desenhaCirculo(x - 20, y - 35, 10, folha2)
+
+
+
+        }
         //caule
         pincel.fillStyle = 'green';
         pincel.fillRect(298, 229, 4, 171);
@@ -32,24 +67,44 @@
         //center        x    y
         desenhaCirculo(300, 200, 30, 'yellow')
         //top 0 1 2  
-        desenhaCirculo(300, 160, 10,'lightgreen')
-        desenhaCirculo(320, 165, 10,'green')
-        desenhaCirculo(335, 180, 10,'lightgreen')
+        desenhaCirculo(300, 160, 10, 'lightgreen')
+        desenhaCirculo(320, 165, 10, 'green')
+        desenhaCirculo(335, 180, 10, 'lightgreen')
         //right 3 4 5
-        desenhaCirculo(340, 200, 10,'green')
-        desenhaCirculo(335, 220, 10,'lightgreen')
-        desenhaCirculo(320, 235, 10,'green')
+        desenhaCirculo(340, 200, 10, 'green')
+        desenhaCirculo(335, 220, 10, 'lightgreen')
+        desenhaCirculo(320, 235, 10, 'green')
         //botton 6 7 8
-        desenhaCirculo(300, 240, 10,'lightgreen')
-        desenhaCirculo(280, 235, 10,'green')
-        desenhaCirculo(265, 220, 10,'lightgreen')
+        desenhaCirculo(300, 240, 10, 'lightgreen')
+        desenhaCirculo(280, 235, 10, 'green')
+        desenhaCirculo(265, 220, 10, 'lightgreen')
         //left 9 10 11
-        desenhaCirculo(260, 200, 10,'green')
-        desenhaCirculo(265, 180, 10,'lightgreen')
-        desenhaCirculo(280, 165, 10,'green')
+        desenhaCirculo(260, 200, 10, 'green')
+        desenhaCirculo(265, 180, 10, 'lightgreen')
+        desenhaCirculo(280, 165, 10, 'green')
 
-
+        desenhaFlor(100, 200, 'Orange', 'Purple', 'Blue')
+        desenhaFlor(200, 150, 'Orange', 'Purple', 'Blue')
+        desenhaFlor(360, 100, 'purple', 'yellow', 'beige')
+        desenhaFlor(450, 320, 'Red', 'Purple', 'orange')
 
     </script>
+
+    <ul>
+        <li>White - branco;</li>
+        <li>Beige - bege;</li>
+        <li>Yellow - amarelo;</li>
+        <li>Orange - laranja;</li>
+        <li>Red - vermelho;</li>
+        <li>Pink - rosa;</li>
+        <li>Purple - roxo;</li>
+        <li>Blue - azul;</li>
+        <li>Green - verde;</li>
+        <li>Brown - marrom;</li>
+        <li>Gray - cinza;</li>
+        <li>Black - preto.</li>
+    </ul>
+
 </body>
+
 </html>
