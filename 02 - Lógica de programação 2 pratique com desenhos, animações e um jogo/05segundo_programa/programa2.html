@@ -13,7 +13,7 @@
     <canvas width="600" height="400"></canvas>
 
     <script>
-        function desenhaQuadradoVerde(pxi, pyi, txo, tyo, cor, borda) {
+        function desenhaQuadrado(pxi, pyi, txo, tyo, cor, borda) {
             var pxi = pxi;
             var pyi = pyi;
             var txo = txo;
@@ -22,18 +22,25 @@
             var borda = borda;
             var tela = document.querySelector('canvas');
             var pincel = tela.getContext('2d');
-
-            pincel.fillStyle = cor;
+            
+            for (let index = 0; index < 3; index++) {
+                
+                pincel.fillStyle = cor;
             pincel.fillRect(pxi, pyi, txo, tyo);
             pincel.strokeStyle = borda;
             pincel.strokeRect(pxi, pyi, txo, tyo);
+                pyi = pyi + 50
+            }
+            
 
         }
 
-        desenhaQuadradoVerde(0, 0, 50, 50, 'green', 'red');
-        desenhaQuadradoVerde(50, 0, 50, 50, 'blue', 'yellow');
-        desenhaQuadradoVerde(100, 0, 50, 50, 'yellow', 'black');
+        desenhaQuadrado(0, 0, 50, 50, 'green', 'red');        
 
+        desenhaQuadrado(50, 0, 50, 50, 'blue', 'yellow');        
+
+        desenhaQuadrado(100, 0, 50, 50, 'yellow', 'black');
+        
 
 
     </script>
