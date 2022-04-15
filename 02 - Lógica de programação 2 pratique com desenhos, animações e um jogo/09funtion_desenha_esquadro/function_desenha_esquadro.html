@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esquadro</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+
+        function desenhaEsquadro(xa, ya, xc, yc, cor) {
+            var tela = document.querySelector('canvas');
+            var pincel = tela.getContext('2d');
+            //fundo tela
+            pincel.fillStyle = 'lightgray';
+            pincel.fillRect(0, 0, 600, 400);
+            //a implementacao fica com vc :
+            pincel.fillStyle = cor;
+            pincel.beginPath();
+            pincel.moveTo(xa, ya);
+            pincel.lineTo(xa, yc);
+            pincel.lineTo(xc, yc);
+            pincel.fill();
+
+            pincel.fillStyle = 'white';
+            pincel.beginPath();
+            pincel.moveTo(xa * 2, ya + 125);
+            pincel.lineTo(xa * 2, yc - 50);
+            pincel.lineTo(xc - 125, yc - 50);
+            pincel.fill()
+        }
+
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+        //fundo tela
+        pincel.fillStyle = 'lightgray';
+        pincel.fillRect(0, 0, 600, 400);
+
+        desenhaEsquadro(50, 25, 400, 375, 'red')
+
+        //var cor = 'black';
+        //var xa = 50
+        //var ya = 50
+        //var xc = 400
+        //var yc = 400
+
+        //pincel.fillStyle = cor;
+        //pincel.beginPath();
+        //pincel.moveTo(xa, ya);
+        //pincel.lineTo(xa, yc);
+        //pincel.lineTo(xc, yc);
+        //pincel.fill();
+
+        //pincel.fillStyle = 'white';
+        //pincel.beginPath();
+        //pincel.moveTo(xa * 2, ya + 125);
+        //pincel.lineTo(xa * 2, yc - 50);
+        //pincel.lineTo(xc - 125, yc - 50);
+        //pincel.fill()
+
+
+
+
+    </script>
+
+</body>
+
+</html>
