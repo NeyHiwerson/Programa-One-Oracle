@@ -33,25 +33,59 @@
         }
 
         function desenhaBarra(x, y, serie, cores, texto) {
-            
-            
-        }        
+            desenhaRetangulo(x, y, 50, serie[0], cores[0])
+            y += serie[0]
+            desenhaRetangulo(x, y, 50, serie[1], cores[1])
+            y += serie[1]
+            desenhaRetangulo(x, y, 50, serie[2], cores[2])
+            y += serie[2]
+            desenhaRetangulo(x, y, 50, serie[3], cores[3])
+            y += 20
+
+            desenhaTexto(x + 10, y, texto)
+
+        }
 
         var serie2015 = [50, 25, 20, 5];
         var serie2016 = [65, 20, 13, 2];
         var cores = ['blue', 'green', 'yellow', 'red'];
-        
-        desenhaTexto(50, 100, '2015')
-        desenhaTexto(150, 100, '2016')
 
-        desenhaBarra(50, 50, serie2015, cores, '2015');
-        desenhaBarra(150, 50, serie2016, cores, '2016');
-        for (let index = 0; index < cores.length; index++) {
-            let serie = serie2015[index]
-            let cor = cores[index]  
-            desenhaRetangulo(x, y, 50, serie[index], cor[index])
 
+        //var x = 50;
+        //var y = 50;
+        //serie = serie2015
+        //desenhaRetangulo(x, y, 50, serie[0], cores[0])
+        //y += serie[0]
+        //desenhaRetangulo(x, y, 50, serie[1], cores[1])
+        //y += serie[1]
+        //desenhaRetangulo(x, y, 50, serie[2], cores[2])
+        //y += serie[2]
+        //desenhaRetangulo(x, y, 50, serie[3], cores[3])
+        //y += 20
+        //if (serie == serie2015) {
+        //    desenhaTexto(x + 10, y, "2015")
+        //}
+        //if (serie == serie2016) {
+        //    desenhaTexto(x + 10, y, "2016")
+        //}
+
+        desenhaBarra(50, 50, serie2015, cores, '2015')
+        desenhaBarra(150, 50, serie2016, cores, '2016')
+        var navegadores = ['Chrome', 'Firefox', 'Safari', 'Outros']
+
+        var auxx = 50
+        var auxy = 200
+        for (let index = 0; index < navegadores.length; index++) {
+            desenhaRetangulo(auxx, auxy, 20, 20, cores[index])
+            desenhaTexto(auxx + 25, auxy + 20, navegadores[index])            
+            auxy += 30;
         }
+        //desenhaRetangulo(auxx, auxy, 20, 20, cores[0])
+        //desenhaTexto(auxx + 25, auxy + 20, navegadores[0])
+        //auxx += 50
+        //auxy += 50;
+
+
 
 
     </script>
