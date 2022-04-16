@@ -18,12 +18,23 @@
 
         pincel.fillStyle = 'grey';
         pincel.fillRect(0, 0, 600, 400);
+        var raio = 10;
 
         function desenhaCirculo(evento) {
-            let raio = 10;
-            if (evento.shiftKey) {
-                raio+=20
+            if (raio>=10 && raio<=30) {
+                
+                if (evento.shiftKey) {
+                    raio+=10
+                }    
             }
+            if (raio>=15 && raio <=40) {
+                
+                if (evento.altKey) {
+                    raio-=5
+                }
+            }
+
+
             var x = evento.pageX - tela.offsetLeft;
             var y = evento.pageY - tela.offsetTop;
             pincel.fillStyle = 'blue';
