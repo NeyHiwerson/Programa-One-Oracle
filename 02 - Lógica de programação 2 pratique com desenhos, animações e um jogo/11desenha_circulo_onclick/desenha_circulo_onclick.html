@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenha circulo on click</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        //atribuição dos elementos
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+        //fundo tela
+        pincel.fillStyle = 'lightgray';
+        pincel.fillRect(0, 0, 600, 400);
+        
+
+        function desenhaCirculo(evento) {
+            //abaixo temos duas definiçoes:
+            //evento.pageX para nos trazer a posição de x
+            //tela.offsetLeft para nos descontar a borda externa do canvas
+            // e assim nos trazer a posição correta de x referente ao 
+            // quadro interno no nosso caso 400x600
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+                        
+            pincel.fillStyle = "blue";
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0, 2 * 3.14);
+            pincel.fill();
+
+            //log para vermos a posição de x e y 
+            console.log("posição do clique : " + x + ", " + y);
+        }
+
+        tela.onclick = desenhaCirculo;
+
+    </script>
+
+</body>
+
+</html>
