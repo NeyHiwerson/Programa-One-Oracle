@@ -35,7 +35,7 @@
         function mudaCor() {
             alert('Funcionou!');
             corSelecionada++
-            if (corSelecionada>=3) {
+            if (corSelecionada>=cor.length) {
                 corSelecionada=0
             }
             pincel.fillStyle = cor[corSelecionada];
