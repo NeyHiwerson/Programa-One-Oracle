@@ -44,7 +44,7 @@
         var yi = 20;
         var yf = 230;
         var r = 10;
-
+        var taxa = 10;
         function atualizaTela() {
             limpaTela()
             desenhaCirculo(x, y, r)
@@ -60,13 +60,13 @@
             console.log(action)
             //me mostra esse keyCode no console
             if(action == 39 && x < xf) {
-                x = x + 10
+                x = x + taxa
             }else if (action == 37 && x > xi){
-                x = x - 10
+                x = x - taxa
             }else if (action == 38 && y > yi){
-                y = y - 10
+                y = y - taxa
             }else if (action == 40 && y < yf){
-                y = y + 10
+                y = y + taxa
             }
             
         }
