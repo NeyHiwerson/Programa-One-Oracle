@@ -60,8 +60,23 @@
             desenhaAlvo(x, y, raio)
         }
 
-        setInterval(atualizaTela, 800)        
+        var totalAcertos = 0
+        function acertaAlvo(evento){
+            var chutex = evento.pageX - tela.offsetLeft;
+            var chutey = evento.pageY - tela.offsetTop;
+            console.log(chutex + ', ' + chutey)
+            if (chutex >= x - raio && chutex <= x + raio) {
+                if (chutey >= y - raio && chutey <= y + raio) {
+                    console.log('Acertou o Alvo')
+                }
+            }else{
+                console.log('Errou o Alvo')
+            }
 
+        }
+
+        setInterval(atualizaTela, 1200)        
+        tela.onclick = acertaAlvo;
 
     </script>
 
