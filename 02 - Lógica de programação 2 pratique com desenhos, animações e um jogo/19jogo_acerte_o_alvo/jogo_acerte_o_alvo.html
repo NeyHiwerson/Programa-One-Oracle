@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerte o Alvo</title>
+</head>
+<body>
+    
+    <canvas width="330" height="250"></canvas>
+    <script>
+
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+        pincel.fillStyle = 'gray';
+        pincel.fillRect(0, 0, 330, 250);
+
+        function desenhaCirculo(x, y, raio, cor) {
+
+            pincel.fillStyle = cor;
+            pincel.beginPath();
+            pincel.arc(x, y, raio, 0, 2 * Math.PI);
+            pincel.fill();
+
+        }
+
+        function desenhaAlvo(x, y, raio){
+            desenhaCirculo(x, y, 3 * raio, 'red');
+            desenhaCirculo(x, y, 2 * raio, 'white');
+            desenhaCirculo(x, y, raio, 'red');
+        }
+
+        function geraAleatorio(valorMaximo){
+            var margem = 3 * raio
+            var valor = margem + (Math.round(Math.random() * (valorMaximo - 3 * raio)))
+            return valor
+        }
+
+
+        function limpaTela() {
+
+            pincel.clearRect(0, 0, 330, 250);
+
+        }
+        
+        var x; 
+        var xi = 30;
+        var xf = 300;
+        var y;
+        var yi = 30;
+        var yf = 220;
+        var raio = 10;
+        var taxa = 10;
+
+        function atualizaTela() {
+            limpaTela()
+            x = geraAleatorio(xf)
+            y = geraAleatorio(yf)
+            desenhaAlvo(x, y, raio)
+        }
+
+        setInterval(atualizaTela, 800)        
+
+
+    </script>
+
+
+</body>
+</html>
