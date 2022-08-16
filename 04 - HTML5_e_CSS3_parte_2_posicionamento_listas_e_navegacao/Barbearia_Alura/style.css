@@ -101,11 +101,13 @@ footer{
 }
 
 main{
+    width: 940px;
+    margin: 0 auto;
     
 }
 
 form{
-    margin: 40px 0;
+    margin: 40px ;
 }
 
 form label, form legend{
@@ -143,7 +145,7 @@ form label, form legend{
 }
 
 table{
-    margin: 20px 0 40;
+    margin: 20px 40px;
 }
 
 thead {
