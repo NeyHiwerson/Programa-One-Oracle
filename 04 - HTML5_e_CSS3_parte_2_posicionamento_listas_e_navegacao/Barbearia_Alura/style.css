@@ -259,7 +259,11 @@ td, th{
 
 @media screen and (max-width: 480px) {
     .caixa, .principal, .conteudo-beneficios, .mapa-conteudo, .video {
-        width: auto;
+        width: 100%;                
+    }
+
+    .caixa img{
+        margin-left: 25%;
     }
 
     h1 {
@@ -271,7 +275,8 @@ td, th{
     }
 
     .lista-beneficios, .imagem-beneficios{
-        width: 100%;
+        width: 60%;
+        margin: 0 20%;
     }
     
 }
