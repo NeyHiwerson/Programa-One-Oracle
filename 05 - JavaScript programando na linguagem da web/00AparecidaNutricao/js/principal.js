@@ -52,6 +52,52 @@ for (let index = 0; index < pacientes.length; index++) {
     } */
 }
 
+var botaoAdicionar = document.querySelector("#adicionar-paciente");
+botaoAdicionar.addEventListener("click", function(event){
+    event.preventDefault();
+    console.log("Fui clicado!!");
+    var form = document.querySelector("#form-adiciona");
+    console.log(form);
+
+    var nome = form.nome.value;
+    var peso = form.peso.value;
+    var altura = form.altura.value;
+    var gordura = form.gordura.value;
+    console.log(nome);
+    console.log(peso);
+    console.log(altura);
+    console.log(gordura);
+
+    var pacienteTr = document.createElement("tr");
+    console.log(pacienteTr);
+
+    var nomeTd = document.createElement("td");
+    var pesoTd = document.createElement("td");
+    var alturaTd = document.createElement("td");
+    var gorduraTd = document.createElement("td");
+    var imcTd = document.createElement("td");
+
+    nomeTd.textContent = nome;
+    pesoTd.textContent = peso;
+    alturaTd.textContent = altura;
+    gorduraTd.textContent = gordura;
+
+    console.log(nomeTd.textContent);
+    console.log(pesoTd.textContent);
+    console.log(alturaTd.textContent);
+    console.log(gorduraTd.textContent);
+
+    pacienteTr.appendChild(nomeTd);
+    pacienteTr.appendChild(pesoTd);
+    pacienteTr.appendChild(alturaTd);
+    pacienteTr.appendChild(gorduraTd);
+    console.log(pacienteTr);
+
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr)
+
+
+})
 
 
 
